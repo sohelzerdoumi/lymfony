@@ -1,0 +1,74 @@
+{% extends "default.twig" %}
+
+
+{% block content %}
+
+<div class="box">    
+  <div class="box-inner">
+    <div class="box-header well" data-original-title>
+        <h2><i class="icon-edit"></i> {{data.user.firstname}} {{data.user.lastname}}</h2>
+    </div>
+
+    <div class="box-content">
+      <div class="control-group">
+        <form class="form-horizontal" name="save_user" action="{{template.root_url}}user/edit" method="POST">
+          <fieldset>
+
+            <div class="control-group {% if data.error.firstname %}error{% endif %}"> <!-- firstname -->
+              <label class="control-label">Prénom</label>
+              <div class="controls">
+              <input type="text" class="span5" name="firstname" value="{{data.user.firstname}}">
+              <p class="help-block">{{ data.error.firstname }}</p>
+              </div>
+            </div>
+
+            <div class="control-group {% if data.error.lastname %}error{% endif %}"> <!-- lastname -->
+              <label class="control-label">Nom</label>
+              <div class="controls">
+              <input type="text" class="span5" name="lastname" value="{{data.user.lastname}}">
+              <p class="help-block">{{ data.error.lastname }}</p>
+              </div>
+            </div>
+
+            <div class="control-group {% if data.error.email %}error{% endif %}"> <!-- lastname -->
+              <label class="control-label">Email</label>
+              <div class="controls">
+              <input type="text" class="span5" name="email" value="{{data.user.email}}">
+              <p class="help-block">{{ data.error.email }}</p>
+              </div>
+            </div>
+
+            <div class="control-group {% if data.error.password %}error{% endif %}"> <!-- password -->
+              <label class="control-label">Mot de passe</label>
+              <div class="controls">
+              <input type="password" class="span5" name="oldPassword" placeholder="*******">
+              <p class="help-block">{{ data.error.password }}</p>
+              </div>
+            </div>
+
+            <div class="control-group"> <!-- password -->
+              <label class="control-label">Nouveau mot de passe</label>
+              <div class="controls">
+              <input type="password" class="span5" name="password" placeholder="*******">
+              </div>
+            </div>
+
+            <div class="control-group"> <!-- password -->
+              <label class="control-label">Retaper le nouveau mot de passe</label>
+              <div class="controls">
+              <input type="password" class="span5" name="password2" placeholder="*******">
+              </div>
+            </div>
+
+            <button class="btn btn-success" type="submit">Sauvegarder</button>
+
+          </fieldset>
+       </form>
+
+      </div>      
+    </div>            
+  </div>
+</div>
+
+{% endblock %}
+

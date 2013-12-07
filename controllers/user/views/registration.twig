@@ -1,0 +1,78 @@
+{% extends "default.twig" %}
+
+
+{% block content %}
+<div class="box center">
+	<div class="box-inner">
+
+	    <h2> Enregistrement </h2>
+
+		<form class="form-horizontal" action="{{template.root_url}}user/registration" method='POST'>
+			<div class="control-group {% if data.error.login is not empty %} error{% endif%}">
+				<label class="control-label " for="inputLogin">Login</label>
+				<div class="controls">
+					<input type="text" id="inputLogin" name="login" placeholder="Login">
+					{% if data.error.login is not empty %} 
+						<span class="help-inline">{{data.error.login}}</span>
+						{% endif%}
+				</div>
+				<!-- control login-->
+			</div><!-- control group login -->
+			<div class="control-group  {% if data.error.password is not empty %} error{% endif%}">
+				<label class="control-label" for="inputPassword">Password</label>
+				<div class="controls">
+					<input type="password" id="inputPassword" name="password" placeholder="Password">
+					{% if data.error.password is not empty %} 
+						<span class="help-inline">{{data.error.password}}</span>
+						{% endif%}
+				</div><!-- control password -->
+			</div><!-- control group password -->
+			<div class="control-group  {% if data.error.password2 is not empty %} error{% endif%}">
+				<label class="control-label" for="inputPassword22">Confirmation du password</label>
+				<div class="controls">
+					<input type="password" id="inputPassword" name="password2" placeholder="Confirmation">
+					{% if data.error.password2 is not empty %} 
+						<span class="help-inline">{{data.error.password2}}</span>
+						{% endif%}
+				</div><!-- control password -->
+			</div><!-- control group password -->
+			<div class="control-group  {% if data.error.email is not empty %} error{% endif%}">
+				<label class="control-label" for="inputPassword22">Email</label>
+				<div class="controls">
+					<input type="text" id="inputMail" name="email" />
+						{% if data.error.email is not empty %} 
+						<span class="help-inline">{{data.error.email}}</span>
+						{% endif%}
+				</div><!-- control password -->
+			</div><!-- control group firstname  -->
+			<div class="control-group">
+				<label class="control-label" for="inputPassword22">Nom</label>
+				<div class="controls">
+					<input type="text" id="inputMail" name="lastname" />
+				</div><!-- control password -->
+			</div><!-- control group password -->
+			<div class="control-group">
+				<label class="control-label" for="inputPassword22">Prénom</label>
+				<div class="controls">
+					<input type="text" id="inputMail" name="firstname" />
+
+				</div><!-- control password -->
+			</div><!-- control group password -->
+						
+			<div class="control-group">
+				<div class="controls">
+					<label class="checkbox">
+						<input type="checkbox"> Remember me
+					</label>
+					<button type="submit" class="btn btn-success">Sign in</button>
+				</div><!-- control submit -->
+			</div><!-- control group submit -->
+		</form>
+	</div>
+</div>
+
+
+
+
+
+{% endblock %}

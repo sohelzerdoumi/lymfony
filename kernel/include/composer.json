@@ -1,0 +1,15 @@
+{
+    "require": {
+        "doctrine/orm": "2.3.3",
+        "doctrine/dbal": "2.3.3",
+        "twig/twig"    : "1.*"
+    },
+
+    "autoload": {
+        "psr-0": {"": "src/"}
+    }
+
+ 
+
+
+}

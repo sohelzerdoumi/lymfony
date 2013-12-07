@@ -1,0 +1,35 @@
+{% extends "default.twig" %}
+
+
+{% block content %}
+
+<div class="box">
+	<div class="box-inner">
+		<h2>Suppression de compte</h2>
+	
+		{% if data.error %}
+			<div class="alert alert-error	">
+				{{ data.error }}}
+			</div>
+		{% endif %}
+
+		<div class="row-fluid">
+			<form class="form-horizontal" action="{{template.root_url}}user/delete" method="post">
+				<fieldset>
+					<label class="control-label">Confirmer avec votre mot de passe</label>
+					<div class="control input-prepend" title="Password" data-rel="tooltip">
+						<span class="add-on"><i class="icon-lock"></i></span>
+						<input class="input-xlarge" name="password" id="password" type="password" value="" />
+					</div>
+					
+					<div class="clearfix"></div>
+
+					<div class="center buttonvalidation">
+					<button type="submit" class="btn btn-primary">Supprimer</button>
+					</div>
+				</fieldset>
+			</form>
+		</div><!-- / row-fluid -->
+	</div>
+</div>
+{% endblock %}

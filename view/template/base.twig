@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<HEAD>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="shortcut icon" href="{{template.template_url}}img/favicon.png" type="image/png" />
+		<META NAME="Robots" CONTENT="All">
+		<META HTTP-EQUIV="Content-language" CONTENT="fr, fr-be, fr-ca, fr-lu, fr-ch">
+	    <META NAME="Language" CONTENT="FR">
+		<META NAME="Rating" CONTENT="General">
+		
+		<link rel="stylesheet" href="{{template.template_url}}css/bootstrap.min.css" type="text/css" media="screen" />
+		{% block stylesheet %}
+		{% endblock %}
+	</HEAD>
+	<body>
+		{#  Style #}
+		<style type="text/css">
+			{% block style %}
+			{% endblock %}
+		</style>
+
+		{#  Body    #}
+			{% block body %}
+			{% endblock %}
+		{# Javascript #}
+	    <script src="{{template.template_url}}js/bootbox.min.js"></script>
+	    <script src="{{template.template_url}}js/bootstrap-dropdown.js"></script>
+	    <script type="text/javascript" >
+			{% block javascript %}
+			{% endblock %}
+		</script>
+	</body>
+</html>
