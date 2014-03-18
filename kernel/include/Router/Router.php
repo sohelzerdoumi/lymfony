@@ -15,7 +15,13 @@ class Router{
 	 * @var String
 	 */
 	private $uri;
+
+	/**
+	 * @var String 
+	 * 		['GET','POST','PUT','DELETE']
+	 */
 	private $method;
+	
 	private $arguments;
 
 
