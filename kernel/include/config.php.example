@@ -1,0 +1,24 @@
+<?php if (!defined('BASE_CMS') || BASE_CMS !== TRUE) exit;
+
+date_default_timezone_set('Europe/Paris');
+
+$root_path = '/lymfony/web/';
+
+$database =  array(
+    'driver'   => 'pdo_mysql',
+    'host'     => '127.0.0.1',
+    'dbname'   => 'lymfony_database',
+    'user'     => 'lymfony_usern',
+    'password' => 'lymfony_pass'
+);
+
+$template = array(
+	'root_path'			=> $root_path, 
+    'css_path'          => $root_path."css/",
+    'js_path'          => $root_path."js/",
+    'img_path'          => $root_path."img/"
+);
+
+$default_uri = 'user/login';
+
+
